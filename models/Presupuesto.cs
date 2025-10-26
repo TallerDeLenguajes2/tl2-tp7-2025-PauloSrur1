@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace TP7.Models
+namespace Models
 {
     public class Presupuesto
     {
@@ -11,7 +11,6 @@ namespace TP7.Models
         public DateTime FechaCreacion { get; set; }
         public List<PresupuestoDetalle> Detalle { get; set; } = new List<PresupuestoDetalle>();
 
-        // Métodos solicitados
 
         // Calcula el monto total (sin IVA)
         public decimal MontoPresupuesto()
