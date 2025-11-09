@@ -6,6 +6,8 @@ namespace Models
         public string Descripcion { get; set; }
         public int Precio { get; set; }
 
+        public Producto() {}
+
         public Producto(int id, string descripcion, int precio)
         {
             IdProducto = id;

@@ -6,6 +6,8 @@ namespace Models
         public int Cantidad { get; set; }
 
 
+        public PresupuestoDetalle() {}
+
         public PresupuestoDetalle(Producto producto, int cantidad)
         {
             Producto = producto;

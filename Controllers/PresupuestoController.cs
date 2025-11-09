@@ -7,13 +7,13 @@ namespace Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PresupuestoContoller : ControlleBase
+    public class PresupuestoController : ControllerBase
     {
         private readonly PresupuestoRepository _repo;
         public PresupuestoController()
         {
-            _repo = new PresupuestoRepository();        
-        } 
+            _repo = new PresupuestoRepository();
+        }
 
         [HttpPost]
         public IActionResult CrearPresupuesto([FromBody] Presupuesto nuevo)
@@ -41,11 +41,11 @@ namespace Controllers
         public ActionResult<Presupuesto> ObtenerPorId(int id)
         {
             var presupuesto = _repo.ObtenerPorId(id);
-            if(presupuesto = null)
+            if (presupuesto == null)
             {
                 return NotFound($"No se encontro el presupuesto con ID {id}");
-                return Ok(presupuesto);
             }
+            return Ok(presupuesto);
         }
 
         [HttpDelete("{id}")]

@@ -25,6 +25,7 @@ namespace Controllers
         [HttpPut("{id}")]
         public IActionResult ModificarProducto(int id, [FromBody] Producto actualizado)
         {
+            actualizado.IdProducto = id;
             _repo.Modificar(actualizado);
             return Ok("Producto modificado");
         }
@@ -32,7 +33,7 @@ namespace Controllers
         [HttpGet]
         public ActionResult<List<Producto>> ListarProductos()
         {
-            var Lista = _repo.Listar();
+            var lista = _repo.Listar();
             return Ok(lista);
         }
 
@@ -40,11 +41,11 @@ namespace Controllers
         public ActionResult<Producto> ObtenerPorId(int id)
         {
             var producto = _repo.ObtenerPorId(id);
-            if(producto == null)
+            if (producto == null)
             {
                 return NotFound($"No se encontro el producto con ID {id}");
-                return Ok(producto);
             }
+            return Ok(producto);
         }
 
         [HttpDelete("{id}")]

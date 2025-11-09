@@ -6,7 +6,7 @@ namespace Repositories{
 
 public class PresupuestoRepository
     {
-        private string cadenaConexion = "Data Source=tienda.db;";
+        private string cadenaConexion = "Data Source=Tienda.db;";
 
         // Crear nuevo presupuesto
         public void Crear(Presupuesto presupuesto)
